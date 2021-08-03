@@ -1,0 +1,10 @@
+node_modules
+
+#Hardhat files
+cache
+artifacts
+data/abi/*
+build/
+
+#config files
+secrets.json
