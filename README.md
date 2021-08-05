@@ -1,8 +1,10 @@
 # IGO-contract
 
 ## Overview
-* https://hardhat.org/
-* https://www.alchemy.com/
+
+- <https://hardhat.org/>
+
+- <https://www.alchemy.com/>
 
 ## Installation
 
@@ -12,15 +14,18 @@ npm install --save-dev hardhat
 npm install @openzeppelin/contracts
 npx hardhat
 ```
+
 ## create secrets.json
+
 > copy secrets-copy.json secrets.json
+
 ```json
 {
   "mnemonic": "***",
   "alchemyApiKey": "***"
 }
-
 ```
+
 ## Quick Start
 
 ```bash
@@ -32,3 +37,9 @@ node scripts/sample-script.js
 npx hardhat help
 
 ```
+
+## Deploy
+
+- setRewardTotal
+
+- ERC1155 mint

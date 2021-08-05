@@ -1,9 +1,10 @@
-require("@nomiclabs/hardhat-waffle");
+require('@nomiclabs/hardhat-waffle');
+require('@nomiclabs/hardhat-etherscan');
 
-const { alchemyApiKey, mnemonic } = require('./secrets.json');
+const { alchemyApiKey, mnemonic, bscscanApiKey } = require('./secrets.json');
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
-task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
+task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners();
 
   for (const account of accounts) {
@@ -18,33 +19,39 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-  solidity: "0.8.4",
-  networks: { //localhost
-   ropsten: {
-     url: `https://eth-ropsten.alchemyapi.io/v2/${alchemyApiKey}`,
-     accounts: {mnemonic: mnemonic}
-   },
-   Rinkeby: {
-     url: `https://eth-rinkeby.alchemyapi.io/v2/${alchemyApiKey}`,
-     accounts: {mnemonic: mnemonic}
-   },
-   mainnet: {
-    url: `https://bsc-dataseed.binance.org/`,
-    accounts: {mnemonic: mnemonic}
+  solidity: '0.8.4',
+  networks: {
+    //localhost
+    ropsten: {
+      url: `https://eth-ropsten.alchemyapi.io/v2/${alchemyApiKey}`,
+      accounts: { mnemonic: mnemonic },
+    },
+    Rinkeby: {
+      url: `https://eth-rinkeby.alchemyapi.io/v2/${alchemyApiKey}`,
+      accounts: { mnemonic: mnemonic },
+    },
+    mainnet: {
+      url: `https://bsc-dataseed.binance.org/`,
+      accounts: { mnemonic: mnemonic },
+    },
+    testnet: {
+      url: `https://data-seed-prebsc-2-s3.binance.org:8545/`,
+      accounts: { mnemonic: mnemonic },
+    },
+    mainnet: {
+      url: `https://bsc-dataseed.binance.org/`,
+      accounts: { mnemonic: mnemonic },
+    },
   },
-   testnet: {
-    url: `https://data-seed-prebsc-1-s1.binance.org:8545`,
-    accounts: {mnemonic: mnemonic}
+  abiExporter: {
+    path: './data/abi',
+    clear: true,
+    flat: true,
+    spacing: 2,
   },
-  mainnet: {
-    url: `https://bsc-dataseed.binance.org/`,
-    accounts: {mnemonic: mnemonic}
-  }
- },
- abiExporter: {
-  path: './data/abi',
-  clear: true,
-  flat: true,
-  spacing: 2
-  }
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: bscscanApiKey,
+  },
 };
