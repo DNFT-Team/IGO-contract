@@ -8,7 +8,7 @@
     "start": "npx hardhat run --network localhost scripts/igo-script.js",
     "deploy": "npx hardhat run --network testnet scripts/igo-deploy.js",
     "verifyNft1155": "npx hardhat verify --network testnet 0xe5a2758146bea3422532eeB537bE230113bacDd7",
-    "verify": "npx hardhat verify   --network testnet --constructor-args verify.js 0x7689EbFFB41C5B12F749aA26283a1877685Fe439"
+    "verify": "npx hardhat verify --network testnet --constructor-args verify.js 0x7689EbFFB41C5B12F749aA26283a1877685Fe439"
   },
   "repository": {
     "type": "git",
