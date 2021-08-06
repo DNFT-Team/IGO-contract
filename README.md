@@ -6,6 +6,8 @@
 
 - <https://www.alchemy.com/>
 
+- <https://bscscan.com/>
+
 ## Installation
 
 ```bash
