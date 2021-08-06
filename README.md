@@ -24,7 +24,8 @@ npx hardhat
 ```json
 {
   "mnemonic": "***",
-  "alchemyApiKey": "***"
+  "alchemyApiKey": "***",
+  "bscscanApiKey":"***"
 }
 ```
 
