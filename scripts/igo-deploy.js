@@ -32,7 +32,7 @@ async function main() {
   //        0x7689EbFFB41C5B12F749aA26283a1877685Fe439
   //mainnet
   const erc20 = '0xed24fc36d5ee211ea25a80239fb8c4cfd80f12ee';
-  const amount = 12;
+  const amount = 12 * 100000000000000000;
   const nft1155 = '0xe5a2758146bea3422532eeB537bE230113bacDd7';
   const ids = [100, 200, 300];
   const ids_count = [50, 950, 4000];
